@@ -4,7 +4,7 @@ import {Platform,View, Text,Image,StyleSheet} from 'react-native'
 const ConfirmationScreen =()=>{
     return (
         <View>
-            <Text>'You are logged in !'</Text>
+            <Text style={style.textStyle}>You are logged in!</Text>
         </View>
 
 
@@ -13,8 +13,8 @@ const ConfirmationScreen =()=>{
 
 const style = StyleSheet.create({
     textStyle: {
-    marginBottom: 40,
-    textAlign: 'center',
+    marginTop: 40,
+    alignSelf: 'center',
     fontSize: 16,
     }
 })

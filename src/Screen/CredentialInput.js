@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Platform,View, Text, TextInput, Button, StyleSheet} from 'react-native';
+import {Platform,View, Text, TextInput, Button, StyleSheet,Image} from 'react-native';
 import appColors from '../Utils/Colors'
 import AppButton from '../Components/AppButton';
 import AppInput from '../Components/AppInput';
@@ -7,11 +7,10 @@ import AppInput from '../Components/AppInput';
 
 
 
- const  CredentialInput =props => {
-   console.log(props);
+ const CredentialInput=({navigation})=> {
+
   const [userPassword, setUserPassword] = useState([]);
   const [username, setUsername] = useState('');
-
 
  onCredentialsEntered = params => {
     setUserCredentials(enteredCredential => [
@@ -25,9 +24,12 @@ import AppInput from '../Components/AppInput';
 
   return (
     <View style={styles.engine}>
+      <View style={styles.imagealign}>
+      <Image style={styles.logo} source={{uri: 'https://www.geniusplaza.com/static/bundles/media/gp-splash-img.567ce041.png'}}/>
       <Text style={styles.text}>
         {'Welcome, Please enter your credentials'}
       </Text>
+      </View>
       <View style={styles.textInputContainer}>
         <AppInput
           updateState={setUsername}
@@ -43,13 +45,19 @@ import AppInput from '../Components/AppInput';
         />
       </View>
       <AppButton buttonTitle={'Login'} onPress={()=>{
-        props.navigation.navigate('Login')
+        navigation.navigate('Confirmation')
           console.log({userPassword, username})
       }}/>
     </View>
   );
 };
 const styles = StyleSheet.create({
+  logo:{
+    width:130,
+    height:40,
+    paddingTop:30,
+    marginBottom:20
+  },
   scrollView: {
     backgroundColor: 'white',
   },
@@ -72,8 +80,13 @@ const styles = StyleSheet.create({
     borderRadius: 6,
   },
   engine: {
-    marginTop: 300,
+    marginTop:200,
   },
+  imagealign:{
+    justifyContent: 'center',
+    alignItems: 'center',
+
+  }
 });
 
-export default  CredentialInput;
+export default CredentialInput;

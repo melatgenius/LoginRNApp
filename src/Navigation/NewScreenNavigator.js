@@ -1,8 +1,9 @@
 
 import CredentialInput from '../Screen/CredentialInput'
 import ConfirmationScreen from '../Screen/ConfirmationScreen';
-import { createStackNavigator, createAppContainer} from 'react-navigation';
-// import {createStackNavigator} from 'react-navigation-stack';
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
+
 
 
 
